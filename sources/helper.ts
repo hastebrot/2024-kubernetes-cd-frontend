@@ -5,6 +5,10 @@ export const throwError = (message: string): never => {
   throw new Error(message);
 };
 
+export const mapRange = <T>(length: number, callback: (index: number) => T): T[] => {
+  return [...Array(length).keys()].map(callback);
+};
+
 export const Log = {
   // deno-lint-ignore no-explicit-any
   debug(...data: any[]) {
@@ -50,6 +54,28 @@ export const Fmt = {
     stopTime: number,
     roundTo: "millis" | "micros" | "nanos" = "micros",
   ): string {
-    return this.millis(stopTime - startTime, roundTo);
+    return Fmt.millis(stopTime - startTime, roundTo);
+  },
+};
+
+export const Rand = {
+  number(lowerLimit: number, upperLimit: number, rand = Math.random): number {
+    return lowerLimit + Math.floor(rand() * (upperLimit - lowerLimit + 1));
+  },
+
+  item<T>(items: T[], rand = Math.random) {
+    const index = Rand.number(0, items.length - 1, rand);
+    return items[index];
+  },
+
+  char(rand = Math.random): string {
+    const lowerLimit = "a".charCodeAt(0);
+    const upperLimit = "z".charCodeAt(0);
+    const index = Rand.number(lowerLimit, upperLimit, rand);
+    return String.fromCharCode(index);
+  },
+
+  string(length: number, rand = Math.random): string {
+    return mapRange(length, () => Rand.char(rand)).join("");
   },
 };

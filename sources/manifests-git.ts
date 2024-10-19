@@ -1,6 +1,6 @@
 import git from "isomorphic-git";
 import fs from "node:fs/promises";
-import { Fmt } from "./utils.ts";
+import { Fmt } from "./helper.ts";
 
 const gitDirectory = "./build/manifests-repo/";
 const gitBranch = "main";
@@ -17,7 +17,15 @@ if (import.meta.main) {
   // await git.checkout({ fs, dir, ref: gitBranch });
   const encoder = new TextEncoder();
   for (let index = 0; index < 1_000; index += 1) {
-    await fs.writeFile(dir + "file.txt", `${index}`);
+    await fs.mkdir(
+      dir + "applications/application-name/releases/release-number/",
+      { recursive: true },
+    );
+    await fs.writeFile(
+      dir + "applications/application-name/releases/release-number/" +
+        "release-message.txt",
+      `${index}`,
+    );
     await git.add({ fs, dir, filepath: "." });
     await git.commit({
       fs,
