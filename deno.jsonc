@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "git": "deno run -A sources/git.ts",
-    "plot": "deno run -A sources/plot.ts",
+    "manifests-git": "deno run -A sources/manifests-git.ts",
+    "manifests-plot": "deno run -A sources/manifests-plot.ts",
     "pr": "deno task check && deno task fmt && deno task lint",
     "check": "deno check -I --quiet **/*.ts",
     "fmt": "deno fmt --check **/*.ts",
@@ -19,5 +19,8 @@
   },
   "unstable": [
     "kv"
-  ]
+  ],
+  "fmt": {
+    "lineWidth": 100
+  }
 }

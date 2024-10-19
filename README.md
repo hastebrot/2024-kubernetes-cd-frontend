@@ -5,10 +5,17 @@
 
 ### Usage:
 
-- `deno task git`
-- `deno task plot`
+install deno.
 
-### Manifest repository directory schema:
+- `❯ brew install deno`
+- more: https://github.com/denoland/deno#installation
+
+run deno tasks:
+
+- `❯ deno task manifests-git`
+- `❯ deno task manifests-plot`
+
+### Manifests repository directory schema:
 
 ```
 applications/<application-name>/
