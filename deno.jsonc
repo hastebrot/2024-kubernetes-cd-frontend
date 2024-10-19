@@ -11,6 +11,7 @@
   },
   "imports": {
     "@observablehq/plot": "npm:@observablehq/plot@0.6.13",
+    "@std/fmt": "jsr:@std/fmt@1.0.2",
     "d3": "https://cdn.skypack.dev/d3@7.9.0?dts",
     "isomorphic-git": "npm:isomorphic-git@1.27.1",
     "linkedom": "npm:linkedom@0.18.5",
