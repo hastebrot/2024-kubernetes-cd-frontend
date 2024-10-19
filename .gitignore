@@ -1,0 +1,6 @@
+.DS_Store
+.envrc
+
+# deno.
+*.sqlite*
+node_modules/
