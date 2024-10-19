@@ -1,0 +1,392 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:@observablehq/plot@0.6.13": "0.6.13",
+    "npm:linkedom@0.18.5": "0.18.5"
+  },
+  "npm": {
+    "@observablehq/plot@0.6.13": {
+      "integrity": "sha512-ebQS4ENodOy+O3WUjhqv9jNPZENAZRQMIdO3ziOlAKfUzSf69+gaFAqqc04SGrQA6JwJjPYnbfeN3YIpNsCF/A==",
+      "dependencies": [
+        "d3",
+        "interval-tree-1d",
+        "isoformat"
+      ]
+    },
+    "binary-search-bounds@2.0.5": {
+      "integrity": "sha512-H0ea4Fd3lS1+sTEB2TgcLoK21lLhwEJzlQv3IN47pJS976Gx4zoWe0ak3q+uYh60ppQxg9F16Ri4tS1sfD4+jA=="
+    },
+    "boolbase@1.0.0": {
+      "integrity": "sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww=="
+    },
+    "commander@7.2.0": {
+      "integrity": "sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw=="
+    },
+    "css-select@5.1.0": {
+      "integrity": "sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==",
+      "dependencies": [
+        "boolbase",
+        "css-what",
+        "domhandler",
+        "domutils",
+        "nth-check"
+      ]
+    },
+    "css-what@6.1.0": {
+      "integrity": "sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw=="
+    },
+    "cssom@0.5.0": {
+      "integrity": "sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw=="
+    },
+    "d3-array@3.2.4": {
+      "integrity": "sha512-tdQAmyA18i4J7wprpYq8ClcxZy3SC31QMeByyCFyRt7BVHdREQZ5lpzoe5mFEYZUWe+oq8HBvk9JjpibyEV4Jg==",
+      "dependencies": [
+        "internmap"
+      ]
+    },
+    "d3-axis@3.0.0": {
+      "integrity": "sha512-IH5tgjV4jE/GhHkRV0HiVYPDtvfjHQlQfJHs0usq7M30XcSBvOotpmH1IgkcXsO/5gEQZD43B//fc7SRT5S+xw=="
+    },
+    "d3-brush@3.0.0_d3-selection@3.0.0": {
+      "integrity": "sha512-ALnjWlVYkXsVIGlOsuWH1+3udkYFI48Ljihfnh8FZPF2QS9o+PzGLBslO0PjzVoHLZ2KCVgAM8NVkXPJB2aNnQ==",
+      "dependencies": [
+        "d3-dispatch",
+        "d3-drag",
+        "d3-interpolate",
+        "d3-selection",
+        "d3-transition"
+      ]
+    },
+    "d3-chord@3.0.1": {
+      "integrity": "sha512-VE5S6TNa+j8msksl7HwjxMHDM2yNK3XCkusIlpX5kwauBfXuyLAtNg9jCp/iHH61tgI4sb6R/EIMWCqEIdjT/g==",
+      "dependencies": [
+        "d3-path"
+      ]
+    },
+    "d3-color@3.1.0": {
+      "integrity": "sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA=="
+    },
+    "d3-contour@4.0.2": {
+      "integrity": "sha512-4EzFTRIikzs47RGmdxbeUvLWtGedDUNkTcmzoeyg4sP/dvCexO47AaQL7VKy/gul85TOxw+IBgA8US2xwbToNA==",
+      "dependencies": [
+        "d3-array"
+      ]
+    },
+    "d3-delaunay@6.0.4": {
+      "integrity": "sha512-mdjtIZ1XLAM8bm/hx3WwjfHt6Sggek7qH043O8KEjDXN40xi3vx/6pYSVTwLjEgiXQTbvaouWKynLBiUZ6SK6A==",
+      "dependencies": [
+        "delaunator"
+      ]
+    },
+    "d3-dispatch@3.0.1": {
+      "integrity": "sha512-rzUyPU/S7rwUflMyLc1ETDeBj0NRuHKKAcvukozwhshr6g6c5d8zh4c2gQjY2bZ0dXeGLWc1PF174P2tVvKhfg=="
+    },
+    "d3-drag@3.0.0": {
+      "integrity": "sha512-pWbUJLdETVA8lQNJecMxoXfH6x+mO2UQo8rSmZ+QqxcbyA3hfeprFgIT//HW2nlHChWeIIMwS2Fq+gEARkhTkg==",
+      "dependencies": [
+        "d3-dispatch",
+        "d3-selection"
+      ]
+    },
+    "d3-dsv@3.0.1": {
+      "integrity": "sha512-UG6OvdI5afDIFP9w4G0mNq50dSOsXHJaRE8arAS5o9ApWnIElp8GZw1Dun8vP8OyHOZ/QJUKUJwxiiCCnUwm+Q==",
+      "dependencies": [
+        "commander",
+        "iconv-lite",
+        "rw"
+      ]
+    },
+    "d3-ease@3.0.1": {
+      "integrity": "sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w=="
+    },
+    "d3-fetch@3.0.1": {
+      "integrity": "sha512-kpkQIM20n3oLVBKGg6oHrUchHM3xODkTzjMoj7aWQFq5QEM+R6E4WkzT5+tojDY7yjez8KgCBRoj4aEr99Fdqw==",
+      "dependencies": [
+        "d3-dsv"
+      ]
+    },
+    "d3-force@3.0.0": {
+      "integrity": "sha512-zxV/SsA+U4yte8051P4ECydjD/S+qeYtnaIyAs9tgHCqfguma/aAQDjo85A9Z6EKhBirHRJHXIgJUlffT4wdLg==",
+      "dependencies": [
+        "d3-dispatch",
+        "d3-quadtree",
+        "d3-timer"
+      ]
+    },
+    "d3-format@3.1.0": {
+      "integrity": "sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA=="
+    },
+    "d3-geo@3.1.1": {
+      "integrity": "sha512-637ln3gXKXOwhalDzinUgY83KzNWZRKbYubaG+fGVuc/dxO64RRljtCTnf5ecMyE1RIdtqpkVcq0IbtU2S8j2Q==",
+      "dependencies": [
+        "d3-array"
+      ]
+    },
+    "d3-hierarchy@3.1.2": {
+      "integrity": "sha512-FX/9frcub54beBdugHjDCdikxThEqjnR93Qt7PvQTOHxyiNCAlvMrHhclk3cD5VeAaq9fxmfRp+CnWw9rEMBuA=="
+    },
+    "d3-interpolate@3.0.1": {
+      "integrity": "sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==",
+      "dependencies": [
+        "d3-color"
+      ]
+    },
+    "d3-path@3.1.0": {
+      "integrity": "sha512-p3KP5HCf/bvjBSSKuXid6Zqijx7wIfNW+J/maPs+iwR35at5JCbLUT0LzF1cnjbCHWhqzQTIN2Jpe8pRebIEFQ=="
+    },
+    "d3-polygon@3.0.1": {
+      "integrity": "sha512-3vbA7vXYwfe1SYhED++fPUQlWSYTTGmFmQiany/gdbiWgU/iEyQzyymwL9SkJjFFuCS4902BSzewVGsHHmHtXg=="
+    },
+    "d3-quadtree@3.0.1": {
+      "integrity": "sha512-04xDrxQTDTCFwP5H6hRhsRcb9xxv2RzkcsygFzmkSIOJy3PeRJP7sNk3VRIbKXcog561P9oU0/rVH6vDROAgUw=="
+    },
+    "d3-random@3.0.1": {
+      "integrity": "sha512-FXMe9GfxTxqd5D6jFsQ+DJ8BJS4E/fT5mqqdjovykEB2oFbTMDVdg1MGFxfQW+FBOGoB++k8swBrgwSHT1cUXQ=="
+    },
+    "d3-scale-chromatic@3.1.0": {
+      "integrity": "sha512-A3s5PWiZ9YCXFye1o246KoscMWqf8BsD9eRiJ3He7C9OBaxKhAd5TFCdEx/7VbKtxxTsu//1mMJFrEt572cEyQ==",
+      "dependencies": [
+        "d3-color",
+        "d3-interpolate"
+      ]
+    },
+    "d3-scale@4.0.2": {
+      "integrity": "sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==",
+      "dependencies": [
+        "d3-array",
+        "d3-format",
+        "d3-interpolate",
+        "d3-time",
+        "d3-time-format"
+      ]
+    },
+    "d3-selection@3.0.0": {
+      "integrity": "sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ=="
+    },
+    "d3-shape@3.2.0": {
+      "integrity": "sha512-SaLBuwGm3MOViRq2ABk3eLoxwZELpH6zhl3FbAoJ7Vm1gofKx6El1Ib5z23NUEhF9AsGl7y+dzLe5Cw2AArGTA==",
+      "dependencies": [
+        "d3-path"
+      ]
+    },
+    "d3-time-format@4.1.0": {
+      "integrity": "sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==",
+      "dependencies": [
+        "d3-time"
+      ]
+    },
+    "d3-time@3.1.0": {
+      "integrity": "sha512-VqKjzBLejbSMT4IgbmVgDjpkYrNWUYJnbCGo874u7MMKIWsILRX+OpX/gTk8MqjpT1A/c6HY2dCA77ZN0lkQ2Q==",
+      "dependencies": [
+        "d3-array"
+      ]
+    },
+    "d3-timer@3.0.1": {
+      "integrity": "sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA=="
+    },
+    "d3-transition@3.0.1_d3-selection@3.0.0": {
+      "integrity": "sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==",
+      "dependencies": [
+        "d3-color",
+        "d3-dispatch",
+        "d3-ease",
+        "d3-interpolate",
+        "d3-selection",
+        "d3-timer"
+      ]
+    },
+    "d3-zoom@3.0.0_d3-selection@3.0.0": {
+      "integrity": "sha512-b8AmV3kfQaqWAuacbPuNbL6vahnOJflOhexLzMMNLga62+/nh0JzvJ0aO/5a5MVgUFGS7Hu1P9P03o3fJkDCyw==",
+      "dependencies": [
+        "d3-dispatch",
+        "d3-drag",
+        "d3-interpolate",
+        "d3-selection",
+        "d3-transition"
+      ]
+    },
+    "d3@7.9.0_d3-selection@3.0.0": {
+      "integrity": "sha512-e1U46jVP+w7Iut8Jt8ri1YsPOvFpg46k+K8TpCb0P+zjCkjkPnV7WzfDJzMHy1LnA+wj5pLT1wjO901gLXeEhA==",
+      "dependencies": [
+        "d3-array",
+        "d3-axis",
+        "d3-brush",
+        "d3-chord",
+        "d3-color",
+        "d3-contour",
+        "d3-delaunay",
+        "d3-dispatch",
+        "d3-drag",
+        "d3-dsv",
+        "d3-ease",
+        "d3-fetch",
+        "d3-force",
+        "d3-format",
+        "d3-geo",
+        "d3-hierarchy",
+        "d3-interpolate",
+        "d3-path",
+        "d3-polygon",
+        "d3-quadtree",
+        "d3-random",
+        "d3-scale",
+        "d3-scale-chromatic",
+        "d3-selection",
+        "d3-shape",
+        "d3-time",
+        "d3-time-format",
+        "d3-timer",
+        "d3-transition",
+        "d3-zoom"
+      ]
+    },
+    "delaunator@5.0.1": {
+      "integrity": "sha512-8nvh+XBe96aCESrGOqMp/84b13H9cdKbG5P2ejQCh4d4sK9RL4371qou9drQjMhvnPmhWl5hnmqbEE0fXr9Xnw==",
+      "dependencies": [
+        "robust-predicates"
+      ]
+    },
+    "dom-serializer@2.0.0": {
+      "integrity": "sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==",
+      "dependencies": [
+        "domelementtype",
+        "domhandler",
+        "entities"
+      ]
+    },
+    "domelementtype@2.3.0": {
+      "integrity": "sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw=="
+    },
+    "domhandler@5.0.3": {
+      "integrity": "sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==",
+      "dependencies": [
+        "domelementtype"
+      ]
+    },
+    "domutils@3.1.0": {
+      "integrity": "sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==",
+      "dependencies": [
+        "dom-serializer",
+        "domelementtype",
+        "domhandler"
+      ]
+    },
+    "entities@4.5.0": {
+      "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw=="
+    },
+    "html-escaper@3.0.3": {
+      "integrity": "sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ=="
+    },
+    "htmlparser2@9.1.0": {
+      "integrity": "sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==",
+      "dependencies": [
+        "domelementtype",
+        "domhandler",
+        "domutils",
+        "entities"
+      ]
+    },
+    "iconv-lite@0.6.3": {
+      "integrity": "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==",
+      "dependencies": [
+        "safer-buffer"
+      ]
+    },
+    "internmap@2.0.3": {
+      "integrity": "sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg=="
+    },
+    "interval-tree-1d@1.0.4": {
+      "integrity": "sha512-wY8QJH+6wNI0uh4pDQzMvl+478Qh7Rl4qLmqiluxALlNvl+I+o5x38Pw3/z7mDPTPS1dQalZJXsmbvxx5gclhQ==",
+      "dependencies": [
+        "binary-search-bounds"
+      ]
+    },
+    "isoformat@0.2.1": {
+      "integrity": "sha512-tFLRAygk9NqrRPhJSnNGh7g7oaVWDwR0wKh/GM2LgmPa50Eg4UfyaCO4I8k6EqJHl1/uh2RAD6g06n5ygEnrjQ=="
+    },
+    "linkedom@0.18.5": {
+      "integrity": "sha512-JGLaGGtqtu+eOhYrC1wkWYTBcpVWL4AsnwAtMtgO1Q0gI0PuPJKI0zBBE+a/1BrhOE3Uw8JI/ycByAv5cLrAuQ==",
+      "dependencies": [
+        "css-select",
+        "cssom",
+        "html-escaper",
+        "htmlparser2",
+        "uhyphen"
+      ]
+    },
+    "nth-check@2.1.1": {
+      "integrity": "sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==",
+      "dependencies": [
+        "boolbase"
+      ]
+    },
+    "robust-predicates@3.0.2": {
+      "integrity": "sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg=="
+    },
+    "rw@1.3.3": {
+      "integrity": "sha512-PdhdWy89SiZogBLaw42zdeqtRJ//zFd2PgQavcICDUgJT5oW10QCRKbJ6bg4r0/UY2M6BWd5tkxuGFRvCkgfHQ=="
+    },
+    "safer-buffer@2.1.2": {
+      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
+    },
+    "uhyphen@0.2.0": {
+      "integrity": "sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA=="
+    }
+  },
+  "remote": {
+    "https://cdn.skypack.dev/-/d3-array@v3.1.1-Ibshj34oOmCw8da1RLSW/dist=es2019,mode=imports/optimized/d3-array.js": "8d212e48fb1a62da8a0e7d88553b89ea764175bf55da915e0fd3be06bd3ef16a",
+    "https://cdn.skypack.dev/-/d3-array@v3.2.0-zhkQfnMQ2ct1k4iWdZiH/dist=es2019,mode=imports/optimized/d3-array.js": "f780681bcd01ae2d09d87a3b77f26dcd266aaff4a1d2beaf4a1cddc3f4aa32e6",
+    "https://cdn.skypack.dev/-/d3-array@v3.2.1-hGTrvmvXYXil9KElf3uD/dist=es2019,mode=imports/optimized/d3-array.js": "639ba440b2e03a8dad0a1739286e68d1d28a394cb5fe12f80667cea7f384af2b",
+    "https://cdn.skypack.dev/-/d3-array@v3.2.4-G4hy00bPnjF6FrSYpT32/dist=es2019,mode=imports/optimized/d3-array.js": "011294862ca952b18096ae391a80d11960cbff5ab72073f9a93753f7a4c26f4c",
+    "https://cdn.skypack.dev/-/d3-axis@v3.0.0-atdNID4TA9Y0wR53lsTq/dist=es2019,mode=imports/optimized/d3-axis.js": "d7f3dd5af78b5182a2605c524cd041a60b555ba397b52e11726b0e7f6c299923",
+    "https://cdn.skypack.dev/-/d3-brush@v3.0.0-zZF17o7khA5ouA851vmE/dist=es2019,mode=imports/optimized/d3-brush.js": "84234ebab274bd3e7f19173d7433767752a4d208c28390e33ec66a39b99b7384",
+    "https://cdn.skypack.dev/-/d3-chord@v3.0.1-A4yHZ9M0Due0F1e3q2ZV/dist=es2019,mode=imports/optimized/d3-chord.js": "38f91f352053738fe15634a30c5fb85eb0120a0f5d4f740bb58706d65cee7df6",
+    "https://cdn.skypack.dev/-/d3-color@v3.0.1-PMFX4FeSjgNPlkOOfuhz/dist=es2019,mode=imports/optimized/d3-color.js": "128086b1de7d5344d73eca626bdda24e97485ff1de918b8c7c495887d0789ee5",
+    "https://cdn.skypack.dev/-/d3-color@v3.1.0-MWHDMwd2Pvp3NFjvrHgn/dist=es2019,mode=imports/optimized/d3-color.js": "1453d9dd13e7753282b6dc6be612d874585492296ab877f95db116c9945e9ee4",
+    "https://cdn.skypack.dev/-/d3-contour@v4.0.2-VHcuC4hol6jKTiVResXj/dist=es2019,mode=imports/optimized/d3-contour.js": "fd4e176bb81fd1ae9b65e8be335763eff61210acd197bf6efe9122737509db3b",
+    "https://cdn.skypack.dev/-/d3-delaunay@v6.0.4-8vxm7aIldY6XMTxF521F/dist=es2019,mode=imports/optimized/d3-delaunay.js": "2032f6e12108732fe4ad24e6d83cd7966844646f16971422626a3d4132b58fb7",
+    "https://cdn.skypack.dev/-/d3-dispatch@v3.0.1-v6nbfqO2iWOSwp77fYdB/dist=es2019,mode=imports/optimized/d3-dispatch.js": "ecaccf13782f16e77f8b3c27ce78523775d3a80977b87ccf7eaaef10006efc58",
+    "https://cdn.skypack.dev/-/d3-drag@v3.0.0-4A0P6WyMEG0mNkmCgMBD/dist=es2019,mode=imports/optimized/d3-drag.js": "9ab614cf5090e210b8412efa7e3152e70808b57a465b7750c70c80bb4af7b8b9",
+    "https://cdn.skypack.dev/-/d3-dsv@v3.0.1-u1xCRjaLJc0qqv1Z5ERe/dist=es2019,mode=imports/optimized/d3-dsv.js": "ee8d94e3983a87e119733e63b5269aa6ecf7db3d31b28ff325280a8b3f0f473b",
+    "https://cdn.skypack.dev/-/d3-ease@v3.0.1-3U3Df2U0FScNGUqpZbGF/dist=es2019,mode=imports/optimized/d3-ease.js": "5412d85e916f73dd61292e25f9908d9da0d21e7ce9da1a4b913925a59cc7fa19",
+    "https://cdn.skypack.dev/-/d3-fetch@v3.0.1-cfgVHfKF9cxd7T41ojNr/dist=es2019,mode=imports/optimized/d3-fetch.js": "38e08bd116a312e241357f515b570acab1b5f5a3be936ab8bb068221254edf79",
+    "https://cdn.skypack.dev/-/d3-force@v3.0.0-cshj62qMoyIGNIXoil9u/dist=es2019,mode=imports/optimized/d3-force.js": "124545a9ee2334413de29ebb0f67f9ea3736535badfcbb459db22a8d697d036a",
+    "https://cdn.skypack.dev/-/d3-format@v3.0.1-LyjmeNp0E5YokPvOjBaD/dist=es2019,mode=imports/optimized/d3-format.js": "f8167c8da61306385f6ca5ba875068d4c15e9e1db5c03491c0a432a98e21c09e",
+    "https://cdn.skypack.dev/-/d3-format@v3.1.0-D5wAD2odDPNNWsKloKgL/dist=es2019,mode=imports/optimized/d3-format.js": "f8167c8da61306385f6ca5ba875068d4c15e9e1db5c03491c0a432a98e21c09e",
+    "https://cdn.skypack.dev/-/d3-geo@v3.1.1-IFH102ROpDQE4rIMzW42/dist=es2019,mode=imports/optimized/d3-geo.js": "e957d36b0cbb44258c599a5ca6e93a2cf7c49e57a22e5a0f5051fbc2fb8e209a",
+    "https://cdn.skypack.dev/-/d3-hierarchy@v3.1.2-wx7sW10pU4OkfBLgCDCU/dist=es2019,mode=imports/optimized/d3-hierarchy.js": "5edf99f8e1d15eed964e19ac4ccac6f078f1f0afd1b2b1bb68d4c229ea5ac744",
+    "https://cdn.skypack.dev/-/d3-interpolate@v3.0.1-i9AsUdFHwyaukRBWNe8d/dist=es2019,mode=imports/optimized/d3-interpolate.js": "aadf537e206a5f1e48dcab552f0a17b8f887bcee5c8ef912cd5d751a92b9b891",
+    "https://cdn.skypack.dev/-/d3-path@v3.0.1-tHVDF1s2W2KiMuJCxWJF/dist=es2019,mode=imports/optimized/d3-path.js": "eef281984fd57aa0661867a654b0088b199373e3a34a7973a4d035c3f4e7e06d",
+    "https://cdn.skypack.dev/-/d3-path@v3.1.0-nHaUoYzlRDYONpece9h0/dist=es2019,mode=imports/optimized/d3-path.js": "72e048e6b1a2b2cb964bf5ddb60861442e9806f8a1ace929e72f570ab7136606",
+    "https://cdn.skypack.dev/-/d3-polygon@v3.0.1-foQfWyXwuAC5bEqlhZsV/dist=es2019,mode=imports/optimized/d3-polygon.js": "7688de52f49182242df95b72bcae19e004853228df152d666d5d64b1fbb6ef37",
+    "https://cdn.skypack.dev/-/d3-quadtree@v3.0.1-sMtwlDFghZGCTQ3UxKMT/dist=es2019,mode=imports/optimized/d3-quadtree.js": "c5ed229e76ddda0dc7068e4152878a2b1ce3d3f930e9186f7b279a5fef3877ba",
+    "https://cdn.skypack.dev/-/d3-quadtree@v3.0.1-wKAOJSU7kXfXuTMQHWnz/dist=es2019,mode=imports/optimized/d3-quadtree.js": "c5ed229e76ddda0dc7068e4152878a2b1ce3d3f930e9186f7b279a5fef3877ba",
+    "https://cdn.skypack.dev/-/d3-random@v3.0.1-knZTsYQXRbNdsxXPrs9z/dist=es2019,mode=imports/optimized/d3-random.js": "b370f31e2017511434ee66bc277f2f5790f6ded142e531c974ca7b134434c6e3",
+    "https://cdn.skypack.dev/-/d3-scale-chromatic@v3.1.0-xNM6NGi6M0zu1PK6q2i9/dist=es2019,mode=imports/optimized/d3-scale-chromatic.js": "254fd4d1ec35ade14899fd036df83c0e69b81d2c6d7a02c7761a554d549b4204",
+    "https://cdn.skypack.dev/-/d3-scale@v4.0.2-qUv67mnQQKwRMEsPRKcO/dist=es2019,mode=imports/optimized/d3-scale.js": "c08304fc70ae543203285a0f4955a0cca909a710840e71ae05b0ca12f4c64a5f",
+    "https://cdn.skypack.dev/-/d3-selection@v3.0.0-sAmQ3giCT8irML5wz1T1/dist=es2019,mode=imports/optimized/d3-selection.js": "6f8e54f41d86eadbc31fbfcc7e7000f25d454c8fb82ea10d6d768b8507b9c5e1",
+    "https://cdn.skypack.dev/-/d3-shape@v3.2.0-jvLE9CjF3Vp4eEpVme8s/dist=es2019,mode=imports/optimized/d3-shape.js": "6658fcecf3d47725ea0ad1c6e809007b1829c916c18a63bb0862d3d38b6f45b1",
+    "https://cdn.skypack.dev/-/d3-time-format@v4.0.0-A7vYeSqgWxeXXSpz1rEp/dist=es2019,mode=imports/optimized/d3-time-format.js": "5277b829d88ffccc4272d0a4915f1f409e861635d53a185115600fa40e8cf9e3",
+    "https://cdn.skypack.dev/-/d3-time-format@v4.1.0-f8eZV7eLtGIxvK8uvO3o/dist=es2019,mode=imports/optimized/d3-time-format.js": "5277b829d88ffccc4272d0a4915f1f409e861635d53a185115600fa40e8cf9e3",
+    "https://cdn.skypack.dev/-/d3-time@v3.0.0-Ww07wkuPsE2c8Ac33BKQ/dist=es2019,mode=imports/optimized/d3-time.js": "32505e0088a1f92257d08134be1d1f9486f290d94d879651b6cd551cdffe0954",
+    "https://cdn.skypack.dev/-/d3-time@v3.1.0-hkusO1LcNQpH1ccXwop7/dist=es2019,mode=imports/optimized/d3-time.js": "b47a802c15eccb20ec63400e3fb170cc8edb785c4c22956823f3dfe24607cb85",
+    "https://cdn.skypack.dev/-/d3-timer@v3.0.1-O0QpYiI2jhOLEJodLnN1/dist=es2019,mode=imports/optimized/d3-timer.js": "09209f0abd04fa0ab6f5ae396494565d91b8416a2d70c275f1e12fdc64d85a49",
+    "https://cdn.skypack.dev/-/d3-transition@v3.0.1-NLGkKgSwklQ4j3crpRAR/dist=es2019,mode=imports/optimized/d3-transition.js": "a340d0ca901e9ffbf7aa19ff172299ecc224eadc91830c392eb4ad8e58f87bad",
+    "https://cdn.skypack.dev/-/d3-zoom@v3.0.0-8cc3Jk08QIHb0NkNAA9L/dist=es2019,mode=imports/optimized/d3-zoom.js": "9eb84df856df7e114b3bdee9b65b2a369e48f097a67d73ba2aa093f2b9cd0a3a",
+    "https://cdn.skypack.dev/-/d3@v7.9.0-9osTDMFvASzKBejTx7e5/dist=es2019,mode=imports/optimized/d3.js": "a54f2a5409fd3d0c9451c82eb675b23196779ece9894b50695c9f1c6b82154ee",
+    "https://cdn.skypack.dev/-/delaunator@v5.0.0-5MwqNhLRHOkBYnNXuoGN/dist=es2019,mode=imports/optimized/delaunator.js": "9dd1f137878c199389014a4dfc46e173b201618a54a6eae96dfd8acf48eb254b",
+    "https://cdn.skypack.dev/-/internmap@v2.0.3-GWZlRrRMFcDlELwTQEZq/dist=es2019,mode=imports/optimized/internmap.js": "77e29a5bef36c16d18121b32eada72008b641365e40ace81612c17db8c9fc00b",
+    "https://cdn.skypack.dev/-/robust-predicates@v3.0.1-4p4J15SSeLeNloSXgtZt/dist=es2019,mode=imports/optimized/robust-predicates.js": "c5f50797ca0192ab760426db50aa8e1f4960647a0a44b7819537ea944a613dd8",
+    "https://cdn.skypack.dev/d3@7.9.0?dts": "d0f8cd86ba9adb610dd5fc50f174274fd00ead6f337cba9ff615e665059f88bf",
+    "https://cdn.skypack.dev/error/unknown:geojson?from=d3-contour": "72d698e21ea07f360c68f548f46d180716d17b6eae2950af60d38fed49d1c91a",
+    "https://cdn.skypack.dev/error/unknown:geojson?from=d3-geo": "e3d2b4bf4d2a96469744427bae90db7a91a2ea909d8f4ff2fe8c952626699942"
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:@observablehq/plot@0.6.13",
+      "npm:isomorphic-git@1.27.1",
+      "npm:linkedom@0.18.5",
+      "npm:zod@3.23.8"
+    ]
+  }
+}
