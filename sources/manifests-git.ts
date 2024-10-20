@@ -5,13 +5,12 @@ import { Fmt, Rand } from "./helper.ts";
 const gitDirectory = "./build/manifests-repo/";
 const gitBranch = "main";
 
-const chunkGitCommits = 1_000 / 2;
+const chunkGitCommits = 1_000 / 4;
 const chunkGitLogs = 100;
 
 if (import.meta.main) {
-  const startTime = performance.now();
   const encoder = new TextEncoder();
-  const decoder = new TextDecoder();
+  const _decoder = new TextDecoder();
   const dir = gitDirectory;
   const cache = {};
 
@@ -23,6 +22,8 @@ if (import.meta.main) {
   }
 
   {
+    const startTime = performance.now();
+    let countOfCommits = 0;
     for (let index = 0; index < chunkGitCommits; index += 1) {
       const releaseNumber = Rand.number(1, 10);
       await fs.mkdir(
@@ -45,8 +46,17 @@ if (import.meta.main) {
         },
       });
       await Deno.stdout.write(encoder.encode("."));
+      countOfCommits += 1;
     }
-    console.log("done");
+    console.log(countOfCommits);
+    const stopTime = performance.now();
+    console.log(
+      "time (git commit --all):",
+      Fmt.millisDiff(startTime, stopTime, "millis"),
+      "total,",
+      Fmt.millis((stopTime - startTime) / countOfCommits, "micros"),
+      "per commit",
+    );
   }
 
   // deno-lint-ignore no-inner-declarations
@@ -81,9 +91,9 @@ if (import.meta.main) {
     return files;
   }
 
-  const startTimeLog = performance.now();
   {
-    let numOfCommits = 0;
+    const startTime = performance.now();
+    let countOfCommits = 0;
     let startAt = gitBranch;
     const limitBy = chunkGitLogs;
     while (true) {
@@ -110,12 +120,17 @@ if (import.meta.main) {
       if (nextStartAt === startAt) {
         break;
       }
-      numOfCommits += commits.length - (startAt === gitBranch ? 0 : 1);
+      countOfCommits += commits.length - (startAt === gitBranch ? 0 : 1);
       startAt = nextStartAt;
     }
-    console.log(numOfCommits);
+    console.log(countOfCommits);
+    const stopTime = performance.now();
+    console.log(
+      "time (git log --stat):",
+      Fmt.millisDiff(startTime, stopTime, "millis"),
+      "total,",
+      Fmt.millis((stopTime - startTime) / countOfCommits, "micros"),
+      "per commit",
+    );
   }
-
-  console.log("time (log):", Fmt.millisDiff(startTimeLog, performance.now(), "millis"));
-  console.log("time:", Fmt.millisDiff(startTime, performance.now(), "millis"));
 }
