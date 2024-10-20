@@ -1,7 +1,7 @@
 # 2024-kubernetes-datavis
 
 > [!NOTE]
-> This project is in early development.
+> Status: This project is in early development.
 
 ### Usage:
 
