@@ -5,6 +5,9 @@ import { Fmt, Rand } from "./helper.ts";
 const gitDirectory = "./build/manifests-repo/";
 const gitBranch = "main";
 
+const chunkGitCommits = 1_000 / 2;
+const chunkGitLogs = 100;
+
 if (import.meta.main) {
   const startTime = performance.now();
   const encoder = new TextEncoder();
@@ -20,7 +23,7 @@ if (import.meta.main) {
   }
 
   {
-    for (let index = 0; index < 1_000 / 2; index += 1) {
+    for (let index = 0; index < chunkGitCommits; index += 1) {
       const releaseNumber = Rand.number(1, 10);
       await fs.mkdir(
         dir + `applications/application-name/releases/${releaseNumber}/`,
@@ -28,7 +31,7 @@ if (import.meta.main) {
       );
       await fs.writeFile(
         dir + `applications/application-name/releases/${releaseNumber}/` +
-          "release-message.txt",
+          "release-message.json",
         `${index + 1}`,
       );
       await git.add({ fs, dir, filepath: "." });
@@ -48,42 +51,41 @@ if (import.meta.main) {
 
   // deno-lint-ignore no-inner-declarations
   async function commitStat(oid: string, oidPrev: string) {
-    type WalkItem = -1 | { filePath: string; status: string };
+    type FileStat = { filePath: string; status: string };
     const trees = [git.TREE({ ref: oid }), git.TREE({ ref: oidPrev })];
-    const files: WalkItem[] = await git.walk({
+    const files: FileStat[] = await git.walk({
       fs,
       dir,
       cache,
       trees,
-      map: async (filePath, treeEntries): Promise<WalkItem> => {
+      map: async (filePath, treeEntries): Promise<FileStat | undefined | null> => {
         const [entry, entryPrev] = treeEntries;
         const type = await entry?.type();
         const typePrev = await entryPrev?.type();
         if (type === "blob" || typePrev === "blob") {
-          const content = await entry?.content();
-          const contentPrev = await entryPrev?.content();
-          if (contentPrev === undefined) {
+          const oid = await entry?.oid();
+          const oidPrev = await entryPrev?.oid();
+          if (oidPrev === undefined) {
             return { filePath, status: "added" };
           }
-          if (content === undefined) {
+          if (oid === undefined) {
             return { filePath, status: "removed" };
           }
-          if (decoder.decode(content) !== decoder.decode(contentPrev)) {
+          if (oid !== oidPrev) {
             return { filePath, status: "changed" };
           }
         }
-
-        return -1;
+        return undefined;
       },
     });
-    return files.filter((it) => it !== -1);
+    return files;
   }
 
   const startTimeLog = performance.now();
   {
     let numOfCommits = 0;
     let startAt = gitBranch;
-    const limitBy = 100;
+    const limitBy = chunkGitLogs;
     while (true) {
       await Deno.stdout.write(encoder.encode("."));
       const commits = await git.log({ fs, dir, cache, ref: startAt, depth: limitBy });
@@ -94,9 +96,12 @@ if (import.meta.main) {
       for (let index = 0; index < commits.length; index += 1) {
         const commit = commits[index];
         const commitPrev = commits[index + 1];
+        const date = new Date(commit.commit.author.timestamp * 1000);
+        const message = commit.commit.message;
         if (commit && commitPrev) {
-          const _stat = await commitStat(commit.oid, commitPrev.oid);
-          // console.log(stat);
+          const stat = await commitStat(commit?.commit?.tree, commitPrev?.commit?.tree);
+          // console.log([date, message, stat]);
+          [date, message, stat];
         }
       }
 

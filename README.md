@@ -19,12 +19,12 @@ run deno tasks:
 
 ```
 applications/<application-name>/
-. application-namespace.txt
+. application-namespace.json
 . releases/<release-number>/
-. . release-author.txt
-. . release-commit.txt
-. . release-date.txt
-. . release-message.txt
+. . release-author.json
+. . release-commit.json
+. . release-date.json
+. . release-message.json
 . . environments/development/
 . . . manifests.yaml
 . . environments/staging/
@@ -32,7 +32,7 @@ applications/<application-name>/
 environments/
 . development/
 . . applications/<application-name>/
-. . . release-number.txt
+. . . release-number.json
 . staging/
 . production/
 ```
