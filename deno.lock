@@ -4,7 +4,8 @@
     "jsr:@std/fmt@1.0.2": "1.0.2",
     "npm:@observablehq/plot@0.6.13": "0.6.13",
     "npm:isomorphic-git@1.27.1": "1.27.1",
-    "npm:linkedom@0.18.5": "0.18.5"
+    "npm:linkedom@0.18.5": "0.18.5",
+    "npm:zod@3.23.8": "3.23.8"
   },
   "jsr": {
     "@std/fmt@1.0.2": {
@@ -443,6 +444,9 @@
     },
     "wrappy@1.0.2": {
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
+    },
+    "zod@3.23.8": {
+      "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g=="
     }
   },
   "remote": {
@@ -489,9 +493,7 @@
     "https://cdn.skypack.dev/-/delaunator@v5.0.0-5MwqNhLRHOkBYnNXuoGN/dist=es2019,mode=imports/optimized/delaunator.js": "9dd1f137878c199389014a4dfc46e173b201618a54a6eae96dfd8acf48eb254b",
     "https://cdn.skypack.dev/-/internmap@v2.0.3-GWZlRrRMFcDlELwTQEZq/dist=es2019,mode=imports/optimized/internmap.js": "77e29a5bef36c16d18121b32eada72008b641365e40ace81612c17db8c9fc00b",
     "https://cdn.skypack.dev/-/robust-predicates@v3.0.1-4p4J15SSeLeNloSXgtZt/dist=es2019,mode=imports/optimized/robust-predicates.js": "c5f50797ca0192ab760426db50aa8e1f4960647a0a44b7819537ea944a613dd8",
-    "https://cdn.skypack.dev/d3@7.9.0?dts": "d0f8cd86ba9adb610dd5fc50f174274fd00ead6f337cba9ff615e665059f88bf",
-    "https://cdn.skypack.dev/error/unknown:geojson?from=d3-contour": "72d698e21ea07f360c68f548f46d180716d17b6eae2950af60d38fed49d1c91a",
-    "https://cdn.skypack.dev/error/unknown:geojson?from=d3-geo": "e3d2b4bf4d2a96469744427bae90db7a91a2ea909d8f4ff2fe8c952626699942"
+    "https://cdn.skypack.dev/d3@7.9.0?dts": "d0f8cd86ba9adb610dd5fc50f174274fd00ead6f337cba9ff615e665059f88bf"
   },
   "workspace": {
     "dependencies": [

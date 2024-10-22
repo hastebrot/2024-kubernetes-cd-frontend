@@ -1,6 +1,6 @@
 import git from "isomorphic-git";
 import fs from "node:fs/promises";
-import { Fmt, Rand } from "./helper.ts";
+import { Fmt, Rand } from "../helper.ts";
 
 const gitDirectory = "./build/manifests-repo/";
 const gitBranch = "main";
@@ -24,15 +24,18 @@ if (import.meta.main) {
   {
     const startTime = performance.now();
     let countOfCommits = 0;
+    await fs.mkdir(dir + `applications/`, { recursive: true });
+    await fs.mkdir(dir + `environments/`, { recursive: true });
     for (let index = 0; index < chunkGitCommits; index += 1) {
       const releaseNumber = Rand.number(1, 10);
+      const applicationPath = `applications/application-name/`;
+      const releasePath = `releases/${releaseNumber}/`;
       await fs.mkdir(
-        dir + `applications/application-name/releases/${releaseNumber}/`,
+        dir + applicationPath + releasePath,
         { recursive: true },
       );
       await fs.writeFile(
-        dir + `applications/application-name/releases/${releaseNumber}/` +
-          "release-message.json",
+        dir + applicationPath + releasePath + "release-message.json",
         `${index + 1}`,
       );
       await git.add({ fs, dir, filepath: "." });
@@ -45,8 +48,8 @@ if (import.meta.main) {
           email: "author email",
         },
       });
-      await Deno.stdout.write(encoder.encode("."));
       countOfCommits += 1;
+      await Deno.stdout.write(encoder.encode("."));
     }
     console.log(countOfCommits);
     const stopTime = performance.now();
@@ -97,7 +100,6 @@ if (import.meta.main) {
     let startAt = gitBranch;
     const limitBy = chunkGitLogs;
     while (true) {
-      await Deno.stdout.write(encoder.encode("."));
       const commits = await git.log({ fs, dir, cache, ref: startAt, depth: limitBy });
       if (commits.length === 0) {
         break;
@@ -122,6 +124,7 @@ if (import.meta.main) {
       }
       countOfCommits += commits.length - (startAt === gitBranch ? 0 : 1);
       startAt = nextStartAt;
+      await Deno.stdout.write(encoder.encode("."));
     }
     console.log(countOfCommits);
     const stopTime = performance.now();

@@ -12,8 +12,8 @@ install deno.
 
 run deno tasks:
 
-- `❯ deno task manifests-git`
-- `❯ deno task manifests-plot`
+- `❯ deno task run:manifests-git`
+- `❯ deno task run:manifests-plot`
 
 ### Manifests repository directory schema:
 
