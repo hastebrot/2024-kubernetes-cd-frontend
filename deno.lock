@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "jsr:@std/fmt@1.0.2": "1.0.2",
+    "npm:@ngneat/falso@7.2.0": "7.2.0",
     "npm:@observablehq/plot@0.6.13": "0.6.13",
     "npm:isomorphic-git@1.27.1": "1.27.1",
     "npm:linkedom@0.18.5": "0.18.5",
@@ -13,6 +14,13 @@
     }
   },
   "npm": {
+    "@ngneat/falso@7.2.0": {
+      "integrity": "sha512-283EXBFd05kCbGuGSXgmvhCsQYEYzvD/eJaE7lxd05qRB0tgREvZX7TRlJ1KSp8nHxoK6Ws029G1Y30mt4IVAA==",
+      "dependencies": [
+        "seedrandom",
+        "uuid"
+      ]
+    },
     "@observablehq/plot@0.6.13": {
       "integrity": "sha512-ebQS4ENodOy+O3WUjhqv9jNPZENAZRQMIdO3ziOlAKfUzSf69+gaFAqqc04SGrQA6JwJjPYnbfeN3YIpNsCF/A==",
       "dependencies": [
@@ -412,6 +420,9 @@
     "safer-buffer@2.1.2": {
       "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
     },
+    "seedrandom@3.0.5": {
+      "integrity": "sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg=="
+    },
     "sha.js@2.4.11": {
       "integrity": "sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==",
       "dependencies": [
@@ -441,6 +452,9 @@
     },
     "util-deprecate@1.0.2": {
       "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
+    },
+    "uuid@8.3.2": {
+      "integrity": "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
     },
     "wrappy@1.0.2": {
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
@@ -498,6 +512,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/fmt@1.0.2",
+      "npm:@ngneat/falso@7.2.0",
       "npm:@observablehq/plot@0.6.13",
       "npm:isomorphic-git@1.27.1",
       "npm:linkedom@0.18.5",
