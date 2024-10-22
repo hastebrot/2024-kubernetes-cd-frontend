@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "manifests-git": "deno run -A sources/manifests-git.ts",
-    "manifests-plot": "deno run -A sources/manifests-plot.ts",
+    "run:manifests-git": "deno run -A sources/run/manifests-git.ts",
+    "run:manifests-plot": "deno run -A sources/run/manifests-plot.ts",
     "pr": "deno task check && deno task fmt && deno task lint",
     "check": "deno check -I --quiet **/*.ts",
     "fmt": "deno fmt --check **/*.ts",
