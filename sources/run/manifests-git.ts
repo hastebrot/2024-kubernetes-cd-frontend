@@ -1,18 +1,44 @@
 import git from "isomorphic-git";
 import fs from "node:fs/promises";
-import { Fmt, Rand } from "../helper.ts";
+import {
+  fakeApplicationName,
+  fakeEnvironmentNames,
+  fakeGitAuthor,
+  fakeGitCommit,
+  fakeGitMessage,
+  fakeManifestYaml,
+  fakeNamespaceName,
+} from "../faker.ts";
+import { Fmt, Json, mapRange, Rand, Zod } from "../helper.ts";
+import { Application, Environment } from "../model.ts";
 
 const gitDirectory = "./build/manifests-repo/";
 const gitBranch = "main";
-
-const chunkGitCommits = 1_000 / 4;
+const chunkGitCommits = 100;
 const chunkGitLogs = 100;
 
 if (import.meta.main) {
-  const encoder = new TextEncoder();
-  const _decoder = new TextDecoder();
   const dir = gitDirectory;
   const cache = {};
+  const encoder = new TextEncoder();
+  const _decoder = new TextDecoder();
+
+  const uniqueItems = <T>(items: T[]): T[] => Array.from(new Set(items));
+  const environments = fakeEnvironmentNames().map((environmentName) => {
+    return {
+      environmentName,
+    };
+  });
+  const applications = uniqueItems(mapRange(100, () => {
+    const namespaceName = fakeNamespaceName();
+    return {
+      applicationName: `${namespaceName}-${fakeApplicationName()}`,
+      namespaceName,
+    };
+  }));
+  const gitAuthors = uniqueItems(mapRange(20, () => {
+    return fakeGitAuthor();
+  }));
 
   {
     await git.init({ fs, dir, defaultBranch: gitBranch });
@@ -28,25 +54,70 @@ if (import.meta.main) {
     await fs.mkdir(dir + `environments/`, { recursive: true });
     for (let index = 0; index < chunkGitCommits; index += 1) {
       const releaseNumber = Rand.number(1, 10);
-      const applicationPath = `applications/application-name/`;
+      const application = Zod.parseStrict(Application, Rand.item(applications));
+      const environment = Zod.parseStrict(Environment, Rand.item(environments));
+      const releaseCommit = fakeGitCommit();
+      const releaseDate = new Date().toISOString();
+
+      const applicationPath = `applications/${application.applicationName}/`;
+      const environmentPath = `environments/${environment.environmentName}/`;
       const releasePath = `releases/${releaseNumber}/`;
+
       await fs.mkdir(
-        dir + applicationPath + releasePath,
+        dir + applicationPath + releasePath + environmentPath,
+        { recursive: true },
+      );
+      await fs.mkdir(
+        dir + environmentPath + applicationPath,
         { recursive: true },
       );
       await fs.writeFile(
+        dir + applicationPath + "application-namespace.json",
+        Json.write(application.namespaceName),
+      );
+      await fs.writeFile(
         dir + applicationPath + releasePath + "release-message.json",
-        `${index + 1}`,
+        Json.write(fakeGitMessage(application.namespaceName)),
+      );
+      await fs.writeFile(
+        dir + applicationPath + releasePath + "release-author.json",
+        Json.write(Rand.item(gitAuthors)),
+      );
+      await fs.writeFile(
+        dir + applicationPath + releasePath + "release-commit.json",
+        Json.write(releaseCommit),
+      );
+      await fs.writeFile(
+        dir + applicationPath + releasePath + "release-date.json",
+        Json.write(releaseDate),
+      );
+      await fs.writeFile(
+        dir + applicationPath + releasePath + environmentPath + "manifests.yaml",
+        fakeManifestYaml({
+          applicationName: application.applicationName,
+          applicationNamespace: application.namespaceName,
+          gitCommit: releaseCommit,
+        }),
+      );
+      await fs.writeFile(
+        dir + environmentPath + applicationPath + "release-number.json",
+        Json.write(releaseNumber),
+      );
+      await fs.writeFile(
+        dir + environmentPath + applicationPath + "manifests.yaml",
+        fakeManifestYaml({
+          applicationName: application.applicationName,
+          applicationNamespace: application.namespaceName,
+          gitCommit: releaseCommit,
+        }),
       );
       await git.add({ fs, dir, filepath: "." });
       await git.commit({
         fs,
         dir,
-        message: `message ${index + 1}`,
-        author: {
-          name: "author name",
-          email: "author email",
-        },
+        message: `Release ${releaseNumber} of ${application.applicationName}.`,
+        author: { name: "", email: "" },
+        committer: { name: "", email: "" },
       });
       countOfCommits += 1;
       await Deno.stdout.write(encoder.encode("."));

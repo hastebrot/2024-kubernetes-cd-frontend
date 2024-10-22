@@ -9,7 +9,7 @@ export const Environment = Zod.object("Environment", {
 export type Application = z.output<typeof Application>;
 export const Application = Zod.object("Application", {
   applicationName: z.string(),
-  namespace: z.string(),
+  namespaceName: z.string(),
 });
 
 export type Release = z.output<typeof Release>;
