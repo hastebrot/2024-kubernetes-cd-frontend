@@ -23,20 +23,20 @@ if (import.meta.main) {
   const encoder = new TextEncoder();
   const _decoder = new TextDecoder();
 
-  const unique = <T>(items: T[]): T[] => Array.from(new Set(items));
+  const uniqueItems = <T>(items: T[]): T[] => Array.from(new Set(items));
   const environments = fakeEnvironmentNames().map((environmentName) => {
     return {
       environmentName,
     };
   });
-  const applications = unique(mapRange(100, () => {
+  const applications = uniqueItems(mapRange(100, () => {
     const namespaceName = fakeNamespaceName();
     return {
       applicationName: `${namespaceName}-${fakeApplicationName()}`,
       namespaceName,
     };
   }));
-  const gitAuthors = unique(mapRange(20, () => {
+  const gitAuthors = uniqueItems(mapRange(20, () => {
     return fakeGitAuthor();
   }));
 
