@@ -1,27 +1,41 @@
 import { randFullName, randGitCommitSha } from "@ngneat/falso";
 import { mapRange, Rand } from "./helper.ts";
 
-export const randomEnvironmentName = () => {
+export const fakeEnvironmentNames = () => {
+  return environmentNames;
+};
+
+export const fakeEnvironmentName = () => {
   return Rand.item(environmentNames);
 };
 
-export const randomNamespaceName = () => {
+export const fakeNamespaceNames = () => {
+  return namespaceNames;
+};
+
+export const fakeNamespaceName = () => {
   return Rand.item(namespaceNames);
 };
 
-export const randomApplicationName = () => {
+export const fakeApplicationName = () => {
   return `${Rand.item(applicationNames)}-${Rand.number(10, 99)}`;
 };
 
-export const randomGitCommit = () => {
+export const fakeGitCommit = () => {
   return randGitCommitSha();
 };
 
-export const randomGitAuthor = () => {
+export const fakeGitAuthor = () => {
   return randFullName({ withAccents: false });
 };
 
-export const randomTextSentence = (
+export const fakeGitMessage = (namespaceName: string) => {
+  const ticketId = `${namespaceName.toUpperCase()}-${Rand.number(1000, 9999)}`;
+  const ticketType = Rand.item(["feature", "bugfix"]);
+  return `[${ticketId}] ${ticketType}: ${fakeTextSentence(5, 10, 5, 10)}`;
+};
+
+export const fakeTextSentence = (
   minWords: number,
   maxWords: number,
   minWordLength: number,
@@ -40,12 +54,12 @@ export type ManifestYamlData = {
   gitCommit: string;
 };
 
-export const produceManifestYaml = (data: ManifestYamlData) => {
-  return manifestYamlTemplate.trim()
+export const fakeManifestYaml = (data: ManifestYamlData) => {
+  return manifestYamlTemplate.trimStart()
     .replaceAll(/\$applicationNamespace/g, data.applicationNamespace)
     .replaceAll(/\$applicationName/g, data.applicationName)
     .replaceAll(/\$gitCommit/g, data.gitCommit)
-    .replaceAll(/\$loremIpsumText/g, randomTextSentence(6, 6, 6, 12));
+    .replaceAll(/\$loremIpsumText/g, fakeTextSentence(6, 6, 6, 12));
 };
 
 const environmentNames = [
@@ -129,12 +143,3 @@ spec:
   - $loremIpsumText
   - $loremIpsumText
 `;
-
-if (import.meta.main) {
-  const manifestYaml = produceManifestYaml({
-    applicationName: randomApplicationName(),
-    applicationNamespace: randomNamespaceName(),
-    gitCommit: randomGitCommit(),
-  });
-  console.log(manifestYaml);
-}
