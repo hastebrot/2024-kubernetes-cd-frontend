@@ -55,7 +55,7 @@ if (import.meta.main) {
     const stopTime = performance.now();
     console.log(
       "time (git commit --all):",
-      Fmt.millisDiff(startTime, stopTime, "millis"),
+      Fmt.millis(stopTime - startTime, "millis"),
       "total,",
       Fmt.millis((stopTime - startTime) / countOfCommits, "micros"),
       "per commit",
@@ -130,7 +130,7 @@ if (import.meta.main) {
     const stopTime = performance.now();
     console.log(
       "time (git log --stat):",
-      Fmt.millisDiff(startTime, stopTime, "millis"),
+      Fmt.millis(stopTime - startTime, "millis"),
       "total,",
       Fmt.millis((stopTime - startTime) / countOfCommits, "micros"),
       "per commit",
